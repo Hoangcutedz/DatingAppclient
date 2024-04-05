@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { User } from '../_models/user';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
   private currentUserSource = new BehaviorSubject<User | null>(null); // initialized a data member, which can contain a User object or a null value, BehaviorSubject is used to manage data flow
   currentUser$ = this.currentUserSource.asObservable(); // asObservable() is a method of BehaviorSubject that converts the BehaviorSubject object into an observable object
   // Other components can register to track the value of currentUserSource
