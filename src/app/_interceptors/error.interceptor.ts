@@ -1,11 +1,3 @@
-// import { HttpInterceptorFn } from '@angular/common/http';
-
-// export const errorInterceptor: HttpInterceptorFn = (req, next) => {
-
-//   return next(req);
-// };
-
-
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError } from 'rxjs';
