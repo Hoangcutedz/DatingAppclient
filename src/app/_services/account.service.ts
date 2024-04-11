@@ -9,9 +9,8 @@ import { environment } from '../../environments/environment';
 })
 export class AccountService {
   baseUrl = environment.apiUrl;
-  private currentUserSource = new BehaviorSubject<User | null>(null); // initialized a data member, which can contain a User object or a null value, BehaviorSubject is used to manage data flow
-  currentUser$ = this.currentUserSource.asObservable(); // asObservable() is a method of BehaviorSubject that converts the BehaviorSubject object into an observable object
-  // Other components can register to track the value of currentUserSource
+  private currentUserSource = new BehaviorSubject<User | null>(null);
+  currentUser$ = this.currentUserSource.asObservable();
 
   constructor(private http: HttpClient) { }
 
