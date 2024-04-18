@@ -20,9 +20,9 @@
         </li>
       </ul>
 
-      <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown> <!-- async: a pipe (|) in Angular used to process the value of Observable. async pipe helps Angular to automatically register and unregister the Observable, and update the new value into the *ngIf conditional expression -->
+      <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
         <img src="{{user.photoUrl || './assets/user.png'}}" alt="user photo">
-        <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Welcome {{user.username | titlecase}}</a>
+        <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Welcome {{user.knownAs}}</a>
         <div class="dropdown-menu" *dropdownMenu>
           <a class="dropdown-item" routerLink="/member/edit">Edit Profile</a>
           <a class="dropdown-item" (click)="logout()">Logout</a>
@@ -35,7 +35,7 @@
           [(ngModel)]="model.username" 
           class="form-control me-2" 
           type="text" 
-          placeholder="Username"> <!-- [(ngModel)] is a directive in Angular that allows two-way data binding -->
+          placeholder="Username">
         <input 
           name="password"
           [(ngModel)]="model.password"
