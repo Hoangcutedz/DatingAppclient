@@ -4,7 +4,7 @@ import { AccountService } from '../_services/account.service';
 import { take } from 'rxjs';
 
 @Directive({
-  selector: '[appHasRole]' // *appHasRole='["Admin", "Thing"]'
+  selector: '[appHasRole]' // *appHasRole="['Admin', 'Thing]"
 })
 export class HasRoleDirective implements OnInit {
   @Input() appHasRole: string[] = [];

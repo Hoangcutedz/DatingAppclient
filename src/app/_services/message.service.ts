@@ -79,7 +79,7 @@ export class MessageService {
 
   async sendMessage(username: string, content: string) {
     return this.hubConnection?.invoke('SendMessage', {recipientUsername: username, content})
-      .catch(error => console.log(error))
+      .catch(error => console.log(error));
   }
 
   deleteMessage(id: number) {
